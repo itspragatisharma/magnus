@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: magnus
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run server
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false
+      - key: ANTHROPIC_MODEL
+        value: claude-sonnet-5-5
+      - key: INR_PER_USD
+        value: 88
